@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNC LOOKBOOK - MENOCLONE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: "Smooch Sans", serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+        }
+        .canvas-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #youtubeCanvas {
+            width: 800px;
+            height: 450px;
+            background-color: #333; /* Fallback background */
+        }
+        .btn-play {
+            margin-top: 20px;
+            color: white;
+            border-color: white;
+        }
+        .btn-play:hover {
+            background-color: white;
+            color: black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="2deep.png" class="card-img-top" alt="MENOCLONE" width="800" height="auto">
+</div>
+<hr>
+
+<div class="canvas-container">
+    <div id="youtubeCanvas"></div>
+    <button class="btn btn-outline-white btn-play" onclick="playVideo()">PLAY LOOKBOOK</button>
+</div>
+
+<hr>
+
+<div class="container">
+    <img src="desktop.png" class="card-img-top" alt="MENOCLONE" width="auto" height="auto">
+</div>
+
+<script>
+    let player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtubeCanvas', {
+            height: '450',
+            width: '800',
+            videoId: 'YOUR_YOUTUBE_VIDEO_ID', // Replace with your YouTube video ID
+            playerVars: {
+                'playsinline': 1,
+                'controls': 1,
+                'autoplay': 0,
+                'showinfo': 0
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        
+    }
+
+    function playVideo() {
+        if (player) {
+            player.playVideo();
+        }
+    }
+</script>
+
+<script>
+    
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+</script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
